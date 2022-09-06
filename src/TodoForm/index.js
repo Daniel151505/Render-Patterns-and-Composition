@@ -1,15 +1,12 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './TodoForm.css';
 
-function TodoForm() {
+function TodoForm({
+  addTodo,
+  setOpenModal
+}) {
   // Se crea un nuevo estado para el nuevo TODO
   const [newTodoValue, setNewTodoValue] = React.useState('');
-  // Desestructuramos las funciones que se necesitan para añadir un TODO y cerrar el modal
-  const {
-    addTodo,
-    setOpenModal,
-  } = React.useContext(TodoContext);
   
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
